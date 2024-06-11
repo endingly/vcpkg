@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    "name": "libclsp",
+    "version-date": "2020-05-26",
+    "description": "[WIP] A C++17 library for language servers",
+    "homepage": "https://github.com/otreblan/libclsp.git",
+    "license": "GPL-3.0",
+    "dependencies": [
+        "pkgconf",
+        "rapidjson",
+        "boost-assign",
+        "boost-bimap",
+        {
+            "name": "vcpkg-cmake",
+            "host": true
+        },
+        {
+            "name": "vcpkg-cmake-config",
+            "host": true
+        }
+    ]
+}

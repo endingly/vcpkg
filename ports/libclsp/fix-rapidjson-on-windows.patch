@@ -1,0 +1,47 @@
+From f030681f655955fd6a7e0db1fe1ff028bf549f61 Mon Sep 17 00:00:00 2001
+From: endingly <jiasongdeng@qq.com>
+Date: Sat, 18 May 2024 12:50:09 +0800
+Subject: [PATCH] new
+
+---
+ CMakeLists.txt | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2a61b75..3f5f096 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -69,7 +69,7 @@ install(FILES
+ )
+ 
+ # Libraries
+-pkg_check_modules(rapidjson REQUIRED IMPORTED_TARGET RapidJSON)
++find_package(RapidJSON CONFIG REQUIRED)
+ include(FindBoost)
+ 
+ # Linking
+@@ -78,7 +78,7 @@ target_link_libraries(${PROJECT_NAME}
+ 		Boost::headers
+ 
+ 	INTERFACE
+-		PkgConfig::rapidjson
++		rapidjson
+ )
+ 
+ # Other flags
+@@ -88,8 +88,8 @@ target_compile_options(${PROJECT_NAME}
+ )
+ 
+ # Default flags
+-if(NOT DEFINED ENV{CXXFLAGS})
+-	set(CMAKE_CXX_FLAGS "-Wall -Wextra -g -Wl,-z,defs")
+-endif()
++# if(NOT DEFINED ENV{CXXFLAGS})
++# 	set(CMAKE_CXX_FLAGS "-Wall -Wextra -g -Wl,-z,defs")
++# endif()
+ 
+ include(install)
+\ No newline at end of file
+-- 
+2.41.0.windows.1
+
